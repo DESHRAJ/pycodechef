@@ -2,15 +2,16 @@ from setuptools import setup, find_packages
 
 from codecs import open
 from os import path
+import sys
 
 BASE_DIR = path.abspath(path.dirname(__file__))
 
-with open(path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
+with open(path.join(BASE_DIR, 'README.md'), encoding='utf-8') as f:
 	long_description = f.read()
 
 setup(
 	name='pycodechef',
-	version='0.0.1',
+	version='0.0.1.dev1',
 	description='Codechef Python Package',
 	license='MIT',
 	classifiers=[
@@ -33,9 +34,10 @@ setup(
 	author='DESHRAJ',
 	author_email='deshrajdry@gmail.com',
 	url='https://github.com/deshraj/pycodechef',
-	keywords = "programming challenges competitive topcoder codeforces tool cli",
+	keywords = "codechef programming challenges competitive topcoder spoj leetcode hackerrank hackerearth codeforces tool cli",
 	packages=['codechef'],
 	install_requires=[
+		"click>=5.0",
 		"requests==2.7.0"
 	] + (["colorama==0.3.3"] if "win" in sys.platform else []),
 	entry_points = {
